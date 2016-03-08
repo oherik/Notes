@@ -224,3 +224,35 @@ Korta ner beräkningarna eller rader
 sigma_c(RxS) tar lång tid om R och S stora.
 
 sigma_c_rs(sigma_c_r(R) x sigma_c_s(S)) går mycket snabbare, då de tunans ut innan. Slipper många kartesiska produkter.
+
+# Views
+Existerar bara virtuellt.
+```SQL
+CREATE VIEW namn AS [SQL-query]
+```
+Sparas alltså inte någonstans.
+
+Kan göra **inserts** om bar ett FROM table-finns. Insertas i det. INSTEAD OF-triggers är bra annars.
+
+# Index
+För snabbare queries.
+```SQL
+CREATE INDEX indexnamn ON Table(attribut)   -- kan vara flera olika attribut
+```
+Snabbar upp SELECT och WHERE men *saktar ner* UPDATE och INSERT.
+
+# Privilegies
+ \*\*  Owner
+ \* Grant operations
+ ```SQL
+ GRANT [SELECT|INSERT|UPDATE|DELETE|TRIGGER] ON [TABLE|VIEW](ATTRIBUTE)* TO [USER|ROLE] [WITH GRANT OPTION]
+ ```
+ Har U givit V privilegier? Tar O bort U:s privilegier? Kör **CASCADE** så tas även V:s privilegier bort. Kan bli errors annars.
+ ```SQL
+ REVOKE SELECT ON R FROM U CASCADE
+ ```
+# Transactions
+ **A**  Atomicity        All or nothing.
+ **C**  Consistency      After the commit the database should be consistent. Constraints should always hold.
+ **I**  Isolation        Transactions are parallel and don't overlap. They don't know about each other.
+ **D**  Durability       Committed transactions persist even if the system fails.   
