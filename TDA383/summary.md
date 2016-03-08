@@ -4,13 +4,13 @@ Kan inte vara icke-primitiv, kan inte avbrytas.
 Atom -> odelbar. Atomiska oberationer är på samma sätt odelbara.
 
 Har du något du vill ska vara atomic men inte är det? **Semaphores** is the way to go. De har ett antal **permits**.     
-```
+```java
 wait()
 ```
 
 Väntar på en permit och tar den.  
 
-```
+```java
 signal()
 ```
 
@@ -88,7 +88,7 @@ Lägg semaforer runt det kritiska sektionerna.
 ~~~~~~~~~~~~~|===========================================================================|==============~~~====~~===~~==~~=~~~~~~~~~~~~
 ```
 
-```
+```java
 signal(c)
 ```
 Unblocks the first process that's blocked on c. Lämnar över mutexlås.
@@ -145,14 +145,14 @@ false andalso ([utvärderas ej])
 ```
 
 **Tail recursion**: Inget görs i slutet. Bara kallar på sig själv som sista.
-```
+```erlang
 sum([]) ->
   0;
 sum([H|T]) ->
   H + sum(T).
 ```
 Är rekursion, men **inte** tail recursion. Det blir i slutändan H0 + H1 + H2... som utförs sist.
-```
+```erlang
 donothing([0]) ->
   ok;
 donothing([H|T]) ->
@@ -163,7 +163,7 @@ donothing([H|T]) ->
 ```
 6>
 7>
-8>  <- kan ses som en idiotisk fågel.
+8>  <- kan ses som en idiotisk fågel som är väldigt snäll och alltid gör sitt bästa
 9>
       ____  
      /O  O|
@@ -175,7 +175,7 @@ ____/   V |
 
 ## Lambda expressions
 **Anonymous function**: fun/0 här nedan är en anonym funktion.
-```
+```erlang
 test() -> spawn(fun() -> io:format("Test print ~n") end).
 ```
 fun() kommer åt lokala variabler.
@@ -187,7 +187,7 @@ Starta serverloopen med en anonym funktion så den vet vad som ska göras. Behö
 Ha med catches om uppdatering mm skulle misslyckas. Server kan då fortsätta köra även om saker går illa.
 
 Kan **registrera** en process, exempelvis servern med
-```
+```erlang
 register(atom, PID).
 ```
 
@@ -196,7 +196,7 @@ Rita upp state diagram. Olika loopar för olika tillstånd. Lite markovkedjetän
 
 ## Records
 Använder sig av pure operations. Kan inte uppdatera som i ex Java. Tänk concurrent, skulle inte funka. Kan skicka tillbaka uppdaterat record.
-```
+```erlang
 recieve(St, {change_name, Input}) ->
   NewState = St#client_st{name = Input},
   io:fwrite("Det nya namnet är nu ~p~n", [NewState#client_st.name]),
@@ -226,7 +226,7 @@ compare-and-swap(shared, old, new):
   returnerar det gamla värdet i shared.
 ```
 Exempel för incrementer:
-```
+```java
 do { int old = shared
     new = old +1 }  // Här kan man göra vilka operationer man vill, i just detta fall inkrementera
 while(compare-and-swap(shared, old, new) != old)  
@@ -276,7 +276,7 @@ Also limit the queues. 10k -> 32 -> 16 for Spotify. If the producer is faster th
 
 ## Test exam walkthrough
 Tail recursion: the recursive call must be last!
-```
+```java
 while(!crit) Thread.sleep(100); //Polling!
 ```
 Går till meningsfull CritSec i loopen? **Inte busy-wait!** Även att **vänta på conditions** är OK.
