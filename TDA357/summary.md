@@ -101,7 +101,7 @@ a1|b1|a2|c2
 a2|b2|a3|c3
 
 ### Natural join
-Repeterar inte gemensamma attribut
+Repeterar inte gemensamma attribut. Joinar alla attribut med samma namn.
 
 a|b|c
 -|-|-
@@ -152,7 +152,7 @@ För databaser
 ```SQL
 CREATE TRIGGER namn
   BEFORE [eller] AFTER [nåt av följande]
-    * INSERT 
+    * INSERT
     * UPDATE
     * DELETE
     ON table
@@ -170,10 +170,57 @@ BEGIN
 END
 $$ LANGUAGE 'plpgsql'   -- Procedural Language/PostgreSQL
 ```
-**$$** - betyder ungeäfr open/close call. Kan ges ett namn där inne också, men strunta i det i nuläget.
+**$$** - betyder ungefär open/close call. Kan ges ett namn där inne också, men strunta i det i nuläget.
 
 På view:
 ```SQL
 CREATE TRIGGER name
   INSTEAD OF [INSERT | UPDATE | DELETE] ON view    -- Välj något av dem.
 ```
+
+## Expressions for relations
+relation ::= relname
+
+**sigma innan pi**! pi tar ju bort saker.  Pi är som select, sigma som where. Se fysiska anteckningar, svårt att rita i md.
+```SQL
+SELECT namn AS nåt   =>   pi_(name->nåt)
+```
+* ro: ????
+* delta: select DISTINCT
+* tau: ????
+* gamma  GROUP BY
+
+# SQL i Java
+```java
+Connection conn = getConnection(url,username,password);
+```
+**ResultSet** fungerar som en scanner. Har next() och close().
+```java
+st.executeQuery("SELECT osvosv FROM mhmmm WHERE student ='" + student "'");
+```
+
+# SQL injection
+Ska skriva in namnet? De har som WHERE name = 'input'? Kan skicka in namnet som
+```SQL
+Erik' OR 0=0 --               '<- ignorera
+```
+Kommer då alltid vara sant, och man kan få info man inte borde få.
+
+Kan även dra en *Erik'; DROP TABLE Persons --*
+
+Hur kontra? Skapa **blacklist** eller kör **preparedStatement**. Med det sista kan man då köra setString vilket verkligen ser till att databasen vet att det är en sträng den får (och behandlar det inte som ett statement).
+```java
+preparedStatement = "SELECT * FROM persons WHERE name =?";
+preparedStatement.setString(1, input);
+
+istället för
+
+preparedStatement = "SELECT * FROM persons WHERE name ='" + input + "'";
+```
+
+# Tid
+Korta ner beräkningarna eller rader
+
+sigma_c(RxS) tar lång tid om R och S stora.
+
+sigma_c_rs(sigma_c_r(R) x sigma_c_s(S)) går mycket snabbare, då de tunans ut innan. Slipper många kartesiska produkter.
