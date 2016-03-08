@@ -262,3 +262,23 @@ Hitta en oändlig väg
 Small program/few states: draw a **state diagram**. Big program/many states: use **invariants**.
 
 ## Spotify
+* Linked list: totally random
+* Array list: a bit less so, has sequantial array but with references to random places.  
+* Value objects: totally sequential [x|x|x|x]
+
+Futures in promises:
+* Future: golds the future result of a computation.
+* Promise: promises to, in the future, provide a result of a computation
+
+Limit the thread pools! Approximately as many threads as cores is a good idea.
+
+Also limit the queues. 10k -> 32 -> 16 for Spotify. If the producer is faster than the consumer the queue will fill up too fast. Unbounded queue? Crash! It's better to tell the client that you can't complete the search at the moment. Drop tasks rather than having the server crash.
+
+## Test exam walkthrough
+Tail recursion: the recursive call must be last!
+```
+while(!crit) Thread.sleep(100); //Polling!
+```
+Går till meningsfull CritSec i loopen? **Inte busy-wait!** Även att **vänta på conditions** är OK.
+
+Global order i exempelvis Dining Philosophers är bra.
