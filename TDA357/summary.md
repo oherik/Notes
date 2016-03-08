@@ -56,4 +56,124 @@ ORDER BY size ASC, name DESC
 ```
 
 **GROUP BY**
-Används vid *aggregate functions*
+Används vid *aggregate functions* (funktioner på hela tabellen). Ex:
+```SQL
+COUNT(*) FROM...
+COUNT DISTINCT currency FROM...
+SUM population
+```
+
+### Ordnung!
+0. WITH
+1. FROM
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. SELECT **(men skrivs efter WITH)**
+6. ORDER BY
+
+WITH: *namn före*. AS: *namn efter*.
+```SQL
+WITH name AS (query)
+```
+
+## Joins
+**L**  
+
+a|b     
+--|--
+a1|b1
+a2|b2
+
+**R**
+
+a|c     
+--|--
+a2|c2
+a3|c3
+
+### Cross join
+Kartesisk produkt av alla rader.
+
+L_a|b|R_a|c
+--|--|--|--
+a1|b1|a2|c2
+a2|b2|a3|c3
+
+### Natural join
+Repeterar inte gemensamma attribut
+
+a|b|c
+-|-|-
+a2|b2|c2
+
+### Full outer join
+Ska stämma överrens, kan ta tomma celler
+
+a|b|c
+-|-|-
+a1|b1|
+a2|b2|c2
+a3| |c3
+
+```
+Rad:
+1               } Outer left join  
+2  Inner join   }                     }
+3                                     } Outer right join
+```
+
+Jämföra med **NULL** Ger unknown! null = null ger false. Kan var bra för att ta bort rader med nullvärden.
+
+## Mer bös
+### Inline constraints
+För attributes.
+```SQL
+code TEXT CHECK (code LIKE '___') PRIMARY KEY
+```
+**%**: Any number of characters
+```SQL
+sender TEXT REFERENCES Accounts(Number)
+```
+### Constraints
+För tuples
+```SQL
+CONSTRAINT noSelfTrainsfer CHECK (sender <> recipient)
+```
+Klarar *inte* av nästlat eller aggregat (ex summa).
+
+## Assertion
+För tabeller, databaser. Checkas varje gång databasen uppdateras. Väldigt dyr och ineffektiv.
+```SQL
+CREATE ASSERTION name AS (condition)
+```
+## Trigger
+För databaser
+```SQL
+CREATE TRIGGER namn
+  BEFORE [eller] AFTER [nåt av följande]
+    * INSERT 
+    * UPDATE
+    * DELETE
+    ON table
+    FOR EACH ROW eller STATEMENT
+    EXECUTE PROCEDURE functionname;
+```
+En funktion ska alltså skapas. Kolla slidesen för exakt syntax.
+
+## Funktion
+**NEW** - tupeln som fås som argument vid ex INSERT. Kan vara **OLD** i DELETE-sammanhang.
+```SQL
+CREATE FUNCTION asdasdasd() RETURNS TRIGGER AS $$
+BEGIN
+  UPDATE ..........
+END
+$$ LANGUAGE 'plpgsql'   -- Procedural Language/PostgreSQL
+```
+**$$** - betyder ungeäfr open/close call. Kan ges ett namn där inne också, men strunta i det i nuläget.
+
+På view:
+```SQL
+CREATE TRIGGER name
+  INSTEAD OF [INSERT | UPDATE | DELETE] ON view    -- Välj något av dem.
+```
