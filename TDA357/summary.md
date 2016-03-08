@@ -252,7 +252,7 @@ Snabbar upp SELECT och WHERE men *saktar ner* UPDATE och INSERT.
  REVOKE SELECT ON R FROM U CASCADE
  ```
 # Transactions
- **A**  Atomicity        All or nothing.
- **C**  Consistency      After the commit the database should be consistent. Constraints should always hold.
- **I**  Isolation        Transactions are parallel and don't overlap. They don't know about each other.
- **D**  Durability       Committed transactions persist even if the system fails.   
+ **A**  Atomicity        All or nothing.  
+ **C**  Consistency      After the commit the database should be consistent. Constraints should always hold.  
+ **I**  Isolation        Transactions are parallel and don't overlap. They don't know about each other.  
+ **D**  Durability       Committed transactions persist even if the system fails.     
