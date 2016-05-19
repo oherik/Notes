@@ -37,3 +37,10 @@ Betafördelning. Har en övre och en nedre gräns, samt ett värde som användar
 # Mässbesök
 Set packing är vettigt. Går alldeles utmärkt.
 I shortest pack kan man inte lösa problemet att två likadana tal hålls på olika tider. Det kan set packing lösa. Wihoo, så att säga.
+
+# Färja
+Lite mer komplicerad modell. Modellera ett AI-planeringsproblem med logiska steg.
+Viktigt är att värden har olika tillstånd med olika lägen vid olika tidpunkter. Ny mänd variabler vid varje tidpunkt. Detta eftersom **variabler inte kan ändra värde** (till skillnad från i programmering).
+
+# Subset sum till partition och tvärtom
+Jo då det går, som vi gjorde. Lägg till låtsaselement vid subset till partition. Det kan inte finnas på båda sidor.
