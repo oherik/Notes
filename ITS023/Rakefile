@@ -21,7 +21,7 @@ task :default do
 EOS
 end
 
-# invoke Textmate to edit file
-# sh "mate #{path}"
+# invoke Atom to edit file
+sh "atom #{path}"
 
     end
