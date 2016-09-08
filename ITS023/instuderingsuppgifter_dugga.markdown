@@ -100,4 +100,93 @@ Kol är nice sedan industriella revolutionen. Mer olja sen mellankrigstiden och 
 - Uran är ändligt
 
 ## Redogör för begreppet NIMBY
-**N**ot **i**n **m**y **b**ack**y**ard! När man tycker att exempelvis vindkraft är bra sålänge inte kraftverken byggs så det stör utsikten. Estetiska argument och liknande.
+**N**ot **i**n **m**y **b**ack**y**ard! När man tycker att exempelvis vindkraft är bra sålänge inte kraftverken byggs så det stör utsikten. Estetiska argument och liknande.**
+
+# Kapitel 4 - Hållbarhetens gränser
+
+## Vilka är de nio planetära systemgränserna för hållbarhet, som Stockholm Resilience Center har definierat? (miljögifter ersattes 2015 med novel entities – nya kemiska substanser)
+- Klimatförändringar
+- Havsförsurning
+- Utunning av ozonskiktet
+- Kvävecykel/Fosforcykeln
+- Global sötvattenanvändning
+- Ändrad markanvändning
+- Aerosoler i atmosfärening
+- Nya kemiska substanser
+
+## Varför minskar antalet arter på jorden på grund av människans påverkan och vilka är de största hoten mot biologisk mångfald?
+Utsläpp av miljögifter, undanträngning av biotoper, klimatförändrningar, överutnyttjande.
+
+## Vilka principiellt olika typer av källor till utsläpp av fosfor och kväve är det som bidrar till övergödningen av Östersjön?
+- Industri
+- Trafik
+- Jordbruk
+
+## På vilket sätt är frågorna om försurning av haven och utsläppen av klimatpåverkande gaser kopplade till varandra?
+Koldioxid i luften binds med vatten och bildar kolsyra.
+
+## Vad menas med försiktighetsprincipen, då man talar om utsläpp av kemiska föroreningar?
+Ett ämne ska betraktas som farligt till dess att motsatsen bevisas.
+
+## Hur kommer det sig att man genom att lösa smogproblemen i världens storstäder kan komma att bidra till en ökad klimatpåverkan från utsläpp från förbränning av fossila bränslen?
+Eftersom dessa partiklar hjälper till att bilda moln, vilka reflekterar strålning, kan växthuseffekten öka om de försvinner.
+
+## Hur kommer det sig att ekonomisk tillväxt både kan pekas ut som en väg mot ökad hållbarhet och som något som leder till ökad miljöbelastning?
+**Ökad hållbarhet**:  
+Lyfta bort från oljeberoende, klimatförändringar och miljöproblem.  
+Nya tekniska lösningar.  
+**Ökad miljöbelastning**:  
+Större resursutnyttjande
+
+## Vad menas med negativ ekonomisk externalitet? Ge exempel på sådana?
+Kostnader som uppkommer för samhället på grund av produktion. Exempel: miljöförstörning, hälsokostnader.
+
+# Kapitel 5 - Jordens klimat
+## Redogör kortfattat för cyklonernas roll för jordens klimat
+De sätter igång vindar och därmed havsströmmar, något som leder till att den globala temperaturen utjämnas.
+
+## Redogör för skillnaden mellan väder och klimat
+Väder är lokalt och kortsiktigt. Klimat är långsiktigt, antingen lokalt eller globalt. Klimat => väder. Typ.
+
+## Redogör kortfattat för hur människans utsläpp påverkar växthuseffekten
+Energiomvandling, industriella processer släpper ut b.la. koldioxid. Jordbruk står för metan som är c:a 20x mer potent i växthusgassammanhang.
+
+## Redogör kortfattat för de risker som en ökning av den globala medeltemperaturen på 2–6°C skulle medföra
+- Jordbruk kan bli omöjligt på många platser -> hungersnöd
+- Glaciärer försvinner -> vattenförsörjning genom floder kan bli instabil
+- Öknar sprider sig  -> torka
+- Folkvandrningar? Social press. Kanske.
+- Mer intensivt väder -> översvämningar, jordskred
+
+# Kapitel 6 -  Teknikens roll
+## Vad menas med så kallad generell möjliggörande teknik (key enabling technology)? Ge exempel på tekniker och vad dessa har möjliggjort.
+Teknik som fullständigt kan förändra samhället. Exempel: persondatorn, internet.
+
+## Vad menas med diffusion, när man talar om innovationsprocesser?
+Innovationens benägenhet att ta sig från ritbordet till en praktisk produkt.
+
+## Vad menas med leapfrogging? Ge exempel!
+När ett undervecklat land kan hoppa över icke-miljövänliga mellanstegsteknologier och ta sig direkt till de miljövänliga. Exempel: flera länder i Afrika hoppade över landlina och gick direkt på mobilnät.
+
+## Redogör för skillnaden mellan disruptiva och inkrementella innovationer
+Disruptiv: orsakar stora förändringar i beteendet hos en hel bransch.   
+Inkrementell: kan göra samma saker som tidigare, men enklare, effektivare och/eller billigare.
+
+## Beskriv materialcykeln.
+Störig bild. Handelsmaterial framställs ur råmaterial -> Används vid tillverkning -> Används och konsumeras -> Avfallet hanteras
+
+## Sällsynta jordartsmetaller är ofta nödvändiga i modern IT-utrustning. Redogör för några av de problem som finns med användning av sällsynta jordartsmetaller ur ett hållbarhetsperspektiv.
+- Nästan all produktion av dem kommer från Kina
+- Ändlig resurs
+- Utvinning och förädling använder miljöfarliga ämnen
+- Arbetarna utsätts för stora risker vid hanteringen av mineraler och kemikaler i utvinningen och förädlingen
+
+## Vad menas med rebound, och på vilket sätt kan detta motverka försök till decoupling?
+Effektivisering kan leda till ökad användning p.g.a. lägre rörliga kostnader och lägre pris. Det gör att effektivisering och högre ekonomisk utveckling kan ge högre total miljöpåverkan.
+
+# Hedenius, Fredrik m.fl., Hållbar utveckling – historia definition & ingenjörens roll (2015), Kapitel 1–2
+## Redogör kort för framväxten av begreppet hållbar utveckling.
+**TODO**
+
+##Varför kan begreppet hållbar utveckling betraktas som en kompromiss?
+Kompromiss mellan miljörörelsen och utvecklingsrörelsen.
