@@ -85,7 +85,7 @@ Kol är nice sedan industriella revolutionen. Mer olja sen mellankrigstiden och 
 - **1,1 kW** inom transport
 
 ## Hur ser relation ut mellan energianvändning och tillförsel av primärenergiresurser ut i Sverige och vad beror skillnaden på?
-**7,2 kW** per person. Omvandling, saker förloras (**TODO nåt mer?**).
+**7,2 kW** per person. Omvandling, saker förloras.
 
 ## Redogör kortfattat för kärnkraftens för- och nackdelar ur ett hållbarhetsperspektiv.
 **Fördelar**:
@@ -186,7 +186,12 @@ Effektivisering kan leda till ökad användning p.g.a. lägre rörliga kostnader
 
 # Hedenius, Fredrik m.fl., Hållbar utveckling – historia definition & ingenjörens roll (2015), Kapitel 1–2
 ## Redogör kort för framväxten av begreppet hållbar utveckling.
-**TODO**
+**60-tal**: *Tyst vår* fick stort genomslag  
+**70-tal**: Earth Day startas, Greenpeace grundas. **Tillväxtens gränser** släpps. Första internationella miljökonferensen hålls. UNEP bildas.  
+**80-tal**: Vår gemensamma framtid aka **Brundtlandrapporten** släpps. Fokus på samhälle och politik istället för naturvetenskap. Tillväxt är i denna inte något direkt negativt, och begreppet **hållbar utveckling** slår igenom. Två olika sorters rättvisa: inom generation (ex tillväxt) och mellan generationer (ex miljö och resurser).  
+**90-tal**: Miljökonferensen i Rio gålls. Höjdpunkt för miljörörelsen. **Agenda 21** tas fram. Försiktighetsprincipen lyfts fram. **Kyotoprotokollet** skapas.  
+**00-tal**: **Milleniemålen** beskrivs. Kvantifierbara mål. Johanneburgkonferensen hålls.  
+**10-tal**: Rio+20 hålls. Börjar med Hållbarautvecklingsmål. Puh. Bredare än Milleniemålen.
 
 ##Varför kan begreppet hållbar utveckling betraktas som en kompromiss?
 Kompromiss mellan miljörörelsen och utvecklingsrörelsen.
