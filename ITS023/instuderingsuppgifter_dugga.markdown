@@ -20,10 +20,10 @@ Hållbarhet != förnybarhet. Hållbarhet är att använda resurserna i mindre el
 Den areal som behövs för att skapa de varor och resurser för att tillfredsställa en *individs* samtliga behov.
 
 ## Redogör för Det Naturliga Stegets fyra systemvillkor?
-Naturen ska inte utsättas för:
-1. Koncentrationsökning av ämnen från berggrunden
-2. Koncentrationsökning av samhällsproducerade ämnen
-3. undanträngning med fysiska metoder
+Naturen ska inte utsättas för:  
+1. Koncentrationsökning av ämnen från berggrunden  
+2. Koncentrationsökning av samhällsproducerade ämnen  
+3. undanträngning med fysiska metoder  
 4. . Människor hindras inte systematiskt från att tillgodose sina behov
 
 ## Vad är skillnaden mellan en ekocentrisk och en antroprocentisk hållbarhetssyn?
@@ -106,13 +106,15 @@ Kol är nice sedan industriella revolutionen. Mer olja sen mellankrigstiden och 
 
 ## Vilka är de nio planetära systemgränserna för hållbarhet, som Stockholm Resilience Center har definierat? (miljögifter ersattes 2015 med novel entities – nya kemiska substanser)
 - Klimatförändringar
-- Havsförsurning
-- Utunning av ozonskiktet
+- Uttunning av ozonskiktet
 - Kvävecykel/Fosforcykeln
+- Havsförsurning
+- Aerosoler i atmosfärening
 - Global sötvattenanvändning
 - Ändrad markanvändning
-- Aerosoler i atmosfärening
 - Nya kemiska substanser
+
+**KUKHAGÄN**  - som kukhagen fast felstavat.
 
 ## Varför minskar antalet arter på jorden på grund av människans påverkan och vilka är de största hoten mot biologisk mångfald?
 Utsläpp av miljögifter, undanträngning av biotoper, klimatförändrningar, överutnyttjande.
