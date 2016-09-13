@@ -113,8 +113,9 @@ Kol är nice sedan industriella revolutionen. Mer olja sen mellankrigstiden och 
 - Global sötvattenanvändning
 - Ändrad markanvändning
 - Nya kemiska substanser
+- Biologisk mångfald
 
-**KUKHAGÄN**  - som kukhagen fast felstavat.
+**KUKHAGÄN-B**  - som kukhagen fast felstavat.
 
 ## Varför minskar antalet arter på jorden på grund av människans påverkan och vilka är de största hoten mot biologisk mångfald?
 Utsläpp av miljögifter, undanträngning av biotoper, klimatförändrningar, överutnyttjande.
