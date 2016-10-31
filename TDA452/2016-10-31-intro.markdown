@@ -1,3 +1,4 @@
+## Slides 1
 
 Ladda om modul:
 ```haskell
@@ -24,7 +25,16 @@ absolute x | x>=0 = x
 ```
 
 
-
-Double -> Double:  function is Double, result is Double,
+```haskell
+Double -> Double  -- function is Double, result is Double,
 
 first argument -> second argument -> result
+
+:type -- frågar om typen hos en funktion
+```
+
+## Slides 2
+**Tuples** if you want to return several things
+
+### Types
+Haskell usually figures out types. 
