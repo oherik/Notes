@@ -19,7 +19,7 @@ Sååå... är det ekonomiska tillväxten vi egentligen vill maximera. Det vi vi
 * 10% Samhället (inkomst, miljö, saker)
 * 40% Aktiviteter och livsstil (meningsfullt arbete, umgås med folk, träning)
 
-*Huäiejej! Nä jag kan inte härma danska*
+*Huäiejej! Nä jag kan inte härma danska*.  
   \- Föreläsaren, 2k16
 
 Verkar inte som att GDP jämfört med subjektiv livsnöjdhet är korrelerade. Liten skillnad vid fattiigdom. Samma sak med utsläpp kontra subjektivt välbefinnande.

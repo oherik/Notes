@@ -1,0 +1,30 @@
+
+Ladda om modul:
+```haskell
+:r
+
+```
+
+Testing:
+```haskell
+import Test.QuickCheck
+--Sedan kör
+Prelude> quickCheck [testnamn]
+```
+
+To check approx.
+```haskell
+~==
+```
+
+**Definition by cases** (guards, like in Erlang)
+```haskell
+absolute x | x<0 = -x
+absolute x | x>=0 = x
+```
+
+
+
+Double -> Double:  function is Double, result is Double,
+
+first argument -> second argument -> result
