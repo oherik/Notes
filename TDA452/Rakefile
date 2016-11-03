@@ -22,6 +22,9 @@ EOS
 end
 
 # invoke Atom to edit file
-sh "atom #{path}"
+#sh "atom #{path}"
+
+# invike vim to edit vile
+sh "vim #{path}"
 
     end
