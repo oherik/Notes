@@ -1,0 +1,14 @@
+**Function -> Single result**. The state of the world doesn't affect the result.
+
+do c <- readFile fromFile
+
+
+Will still return an IO, not string. Can extract a string locally. Can only use
+c inside the do-block.
+
+Function **words** gives a list of words.
+
+The instruction only gets tun if they meet the operating system.
+
+Return is not a control flow construct. Betyder inte nödvändigtvis att funktionen
+avslutas.

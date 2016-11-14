@@ -1,0 +1,13 @@
+Kommer bli en hel del UML, även Papyrus.
+
+Deadline på måndag.
+
+Hata allt.
+
+En modell är en **förenkling** av verkligheten, med ett mål. Tänk på mottagaren och anpassa därefter.
+
+## Descriptive vs prescreptive model
+Prescreptive beskriver någonting som inte finns, för att skapa något.
+Descriptive beskriver saker som finns.
+
+**Meta model** is the grammar and rules of the model.
