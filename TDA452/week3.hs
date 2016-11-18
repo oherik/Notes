@@ -47,6 +47,13 @@ pascal n = 1:[(p !! i + p !! (i+1)) | i<- [0..(length p-2)]]++[1]
         where
           p = pascal (n-1)
 
+--4
+crossOut :: Int -> [Int] -> [Int]
+crossOut x xs = [j | j <- xs, not (j `mod` x == 0)]
+
+sieve :: [Int] -> [Int]
+sieve [] = []
+sieve (x:xs) = x:(sieve $ crossOut x xs)
 
 --6
 occursIn x xs = (not . null) [y | y <- xs, y == x]
