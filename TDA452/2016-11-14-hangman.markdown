@@ -1,0 +1,81 @@
+# Standalone
+Should have a **module Main**
+
+```haskell
+main :: IO ()
+main = (...)
+```
+Exempel:
+```haskell
+main :: IO ()
+main = interact wordCounts
+```
+Sen anropa med piping
+```
+./countWords < example.txt
+```
+
+# Pure functions
+The functions don't have any other effects than **the result they return**. **No side effects**.
+
+Definitions are like equations. y = f x, they meen the same thing.
+
+```haskell
+f . g x  -- som f ∘ g (x) = f(g(x))
+```
+
+# Purity
+All files that interact with the outside world use IO. **Inside the do-blocks** you can use IO-operations. You can't hide that you use IO()!
+
+```haskell
+difference = do putStrLn "Enter two numbers"
+            x <- readLn
+            y <- readLn
+            print (y-x)
+
+```
+
+```haskell
+() -- only has one value in it, namely (), use when you don't really want to return anything
+```
+
+return in a do-block returns a pure value. Converts IO to pure value.
+
+**Simplifies debugging and testing, good for modularity**. QuickCheck can test these things easily!
+
+No race conditions, no deadlocks.
+
+# Type classes
+Overload functions and operators.
+```haskell
+  instance Num Int where --- ...
+
+```
+
+```haskell
+  instance Show Suit where --- ...
+    show Spaces = "\/"
+    show Diamonds = "<>"
+    -- ...
+```
+# Old lectures
+## Lists
+QuickCheck doesn't work on polymorphic types.
+
+Use type signatures to avoid defaulting to the unit type.
+In the source code, or when calling quickCheck.
+
+Disable extended defaulting in GHCi to be safe:
+```haskell
+:set -XNoExtendedDefaultRules
+```
+
+Or restrict the types used in defaulting to the standard ones:
+```haskell
+default (Integer,Double)
+```
+
+## Higher order functions
+Ex map. Tar in en first-order function, och applicerar den på alla element i en lista. **Take functions as arguments**. Breaks problems into smalelr parts that can be solved using existing functions.
+
+Ord: totally orded types. Såna som kan jämföras med <= eller compare.
