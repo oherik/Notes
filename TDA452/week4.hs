@@ -1,6 +1,8 @@
 -- 0
 import Data.List
 import Data.Maybe
+import Test.QuickCheck
+import System.Random
 
 readNum :: IO ()
 readNum = do
@@ -86,3 +88,19 @@ game' lo hi = do
               game' lo hi
             where
               mid = (div (lo+hi) 2)
+
+-- 5
+listOf :: Integer -> Gen a -> Gen [a]
+listOf n g  | n < 1 = error "Men sluta"
+            | otherwise = vectorOf (fromInteger n) g
+
+listOf' :: Gen Integer -> Gen a -> Gen (Gen [a], Gen [a])
+listOf' i g = do l <- i
+                 let v = valid l
+                 return ((Main.listOf v g), (Main.listOf v g))
+
+valid 0 = 1
+valid v = abs v
+--validInteger :: Gen Integer
+--validInteger = do n <- arbitrary
+--                  return $ abs n + 1
