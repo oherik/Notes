@@ -66,6 +66,16 @@ prop_Look :: Eq a => a -> [(a,b)] -> Bool
 prop_Look x xs = (prop_LookJust x xs && (not (prop_LookNothing x xs))) ||
             ((not (prop_LookJust x xs)) && prop_LookNothing x xs)
 
+-- 2
+sequence' :: Monad m => [m a] -> m [a]
+sequence' [] = return []
+sequence' (x:xs) = do v <- x
+                      vs <- sequence' xs
+                      return $ v:vs
+
+
+-- TODO VAAAAAaaaaaararrrfföööööööööör??????????
+
 -- 3
 
 game :: IO ()
@@ -91,16 +101,51 @@ game' lo hi = do
 
 -- 5
 listOf :: Integer -> Gen a -> Gen [a]
-listOf n g  | n < 1 = error "Men sluta"
-            | otherwise = vectorOf (fromInteger n) g
+listOf n g  | n < 0 = error "Men sluta"
+            | n == 0 = return []
+            | otherwise = do v <- g
+                             vs <- (Main.listOf (n-1) g)
+                             return (v:vs)
 
-listOf' :: Gen Integer -> Gen a -> Gen (Gen [a], Gen [a])
+listOf' :: Gen Integer -> Gen a -> Gen ([a],  [a])
 listOf' i g = do l <- i
                  let v = valid l
-                 return ((Main.listOf v g), (Main.listOf v g))
+                 l1 <- (Main.listOf v g)
+                 l2 <- (Main.listOf v g)
+                 return (l1,l2)
 
 valid 0 = 1
 valid v = abs v
---validInteger :: Gen Integer
---validInteger = do n <- arbitrary
---                  return $ abs n + 1
+
+--r_listOf' :: Gen ([Integer],  [Integer])
+r_listOf'= listOf' validInteger (elements [1..200])
+
+
+prop_1 :: (Eq a) => (Eq b) => [a] -> [b] -> Bool
+prop_1 l1 l2 = (x == l1) && (y == l2)
+  where
+    (x,y) = unzip (zip l1 l2)
+
+prop_2 :: (Eq a) => (Eq b) => [(a,b)] -> Bool
+prop_2 l1 = l1 == l2
+  where
+    (x,y) = unzip l1
+    l2 = zip x y
+
+prop_1' (x,y) = prop_1 x y
+
+
+prop_3 = forAll r_listOf' prop_1'
+--  where (x,y) = r_listOf'
+
+
+-- TODO how use listOf'?
+validInteger :: Gen Integer
+validInteger = do n <- arbitrary
+                  return $ abs n + 1
+
+-- 6
+
+ordered :: (Ord a) => [a] -> Bool
+ordered l | length l < 2 = True
+          | otherwise  = and [l !! i <= l !! (i+1) | i <- [0.. (length l -2 )]]
