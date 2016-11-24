@@ -1,0 +1,139 @@
+# Parsing
+Om vi har en parser som heter number, och det är en parser för ints:
+``` haskell
+parse number "42lolol" == Just(42,"lolol")
+```
+Writing a parser
+
+``` haskell
+digit :: Parser Char
+digit = sat isDigit
+
+> parse digit "123" == Just ('1',"23")
+
+
+number :: Parser Integer
+number = do s <- oneOrMore digit
+            return (read s)
+
+> parse number "42abc" == Just (42,"abc")
+
+
+addNumbers :: Parser Integer
+addNumbers = do a <- number
+                char '+'
+                b <- number
+                return (a+b)
+
+> parse addNumbers "10+5" == Just (15,"")
+
+
+```
+
+Om vi inte har det biblioteket då?
+
+```haskell
+number' :: String -> Maybe (Integer, String)
+number' s = case span isDigit s of
+              ("",_) -> Nothing
+              (s1,s2) -> Just(read s1,s2)
+
+> span isDigit "123xu" == ("123","xu")
+> read "123" == 123
+
+
+addNumbers' :: String -> Maybe (Integer, String)
+addNumbers' s = case number' s of
+                  Just(a,'+':r) ->
+                    case number' r of
+                      Just (b,r) -> Just(a+b,r)
+                      _ -> Nothing
+                  _ -> Nothing
+
+> addNumbers' "10+5" == Just (15,"")
+
+
+```
+
+## Arithmetic expressions
+
+```haskell
+expr, term, factor :: Parser Expr -- TODO kan man skriva så för att definiera alla som samma typ?
+
+expr = expr' <|> term -- TODO Vad gör <|>?
+  where
+    expr' = do t <- term
+              char '+'
+              e <- expr
+              return (Add t e)
+
+term = term' <|> factor
+  where
+    term' = do f <- factor
+              char '*'
+              t <- term
+              return (Mul f t)
+
+factor = (do n<- number;  --TODO varför ;? Jo, för då kan man yolo:a indenteringen
+             return (Num n))
+         <|>
+         (do char '('
+             e <- expr
+             char ')'
+             return e
+
+```
+
+**Zero or more xyz**
+```haskell
+{xyz}
+```
+
+```haskell
+expr = do t <- term
+          ts <- zeroOrMore (do char '+';term)
+          return (foldl Add t ts) -- t är här base caset
+
+term = do f <- factor
+          fs <- zeroOrMore (do char '*';factor)
+          return (foldl Mul f fs)
+
+factor = (Num <$> number) <|> (char '(' *> expr <* char ')')  --TODO vadå <* ???
+```
+
+**<$>**: apply a function to the result of a parser
+```haskell
+ (Num <$> number)
+```
+
+I parsingbiblioteket:
+```haskell
+zeroOrMore, oneOrMore :: Parser a -> Parser [a]
+```
+
+**<|>**: Try the first parser, if it fails, try the other one
+```haskell
+P p <|> P q = P(\s -> case p s of
+                        Nothing -> q s
+                        r       -> r)
+```
+
+ Kolla Sans föreläsning del 2, jag zoneade ut hårt
+
+Parser (a->b): "(Takes) a parser that returns a function"
+
+# Monad
+```haskell
+class Monad m where
+  return  :: a -> m a
+  (>>=)   :: m a -> (a -> m b) -> m b
+```
+
+## Parsing Monad
+```haskell
+instance Monad Parser where -- TODO hur funkar instance?
+  return x    = P(\s -> Just(x,s)) -- Just returns,  doesn't actually parse anything
+  P p >>= f   = P(\s->case p s of
+                        Nothing -> Nothing
+                        Just(a,r) -> parse (f a) r) -- ty a returnerar b, parse returnerar själva funktionen från parsern. Tänk på vilka typer som används!
+```
