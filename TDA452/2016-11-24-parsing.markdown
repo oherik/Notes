@@ -137,3 +137,10 @@ instance Monad Parser where -- TODO hur funkar instance?
                         Nothing -> Nothing
                         Just(a,r) -> parse (f a) r) -- ty a returnerar b, parse returnerar själva funktionen från parsern. Tänk på vilka typer som används!
 ```
+
+```haskell
+instance Eq Integer where
+  x == y                =  x `integerEq` y
+  ```
+ "The type Integer is an instance of the class Eq, and here is the definition of the method corresponding to the operation ==."
+ Given this declaration, we can now compare fixed precision integers for equality using ==.
