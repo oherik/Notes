@@ -1,0 +1,38 @@
+**Lazy**: Don't compute until you know that you need the result
+**Eager**: Compute everything. A.k.a. **strict**
+**Parallel**: Compute a lot of things in parallel
+
+Concurrency vs parallelism:  
+Concurrency is about threads, message parsing, synchronization, deadlocks, etc.   
+Parallelism is about making stuff run faster on parallel hardware, not as complicated as concurrent programming.
+
+Haskell is **lazy**. You can include an error throw in a list, as long as you just take elements in front of the error.
+
+|--- Lazy --------- Eager ---------- Parallel ---|
+
+You can do parallel stuff in Haskell. **par**.
+
+## Circular definition
+```haskell
+fibs :: [Integer]
+fibs = 1 : 1 : zipWith (+) fibs (tail fibs) -- vilken grej! För att räkna ut fibonaccinummer då. Eller en oändlig lista av dem.
+```
+
+Infinite lists are a thing. They are used IRL and can cause GHCi to use 14 GB of memory.
+
+*iterate* et al. are already in the prelude.
+
+Newton's square root thingie:
+```haskell
+
+sqroot x = [a | (a',a) <- zip as (tail as), abs (a'-a) < 1e-10] -- med felmarginal på 1e-10 eller nåt sånt tror jag
+  where
+    as = iterate next 1
+    next a = (a+x/a)/2
+
+```
+
+**Hur funkar punkt?**
+
+S är successor  
+Z är zero  
