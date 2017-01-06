@@ -20,7 +20,7 @@ Modules: [slides](http://www.cse.chalmers.se/edu/year/2016/course/TDA452_Functio
 smartQ och liknande är smart ja.  
 Abstract types: representation is hidden, dvs man exporterar inte en typs konstruktorer i modulen. Typ.
 
-Monads, tranlate do och >>= osv, [slides](http://www.cse.chalmers.se/edu/year/2016/course/TDA452_Functional_Programming/lectures/Monads.html) s 19 och framåt  
+Monads, translate do och >>= osv, [slides](http://www.cse.chalmers.se/edu/year/2016/course/TDA452_Functional_Programming/lectures/Monads.html) s 19 och framåt  
 ```haskell
 do x <- m; more ; stuff  ⟹  m >>= (\x -> do more ; stuff)
 ```
@@ -43,6 +43,18 @@ Lazy IO: [slides](http://www.cse.chalmers.se/edu/year/2016/course/TDA452_Functio
 
 Setsen: [slides](http://www.cse.chalmers.se/edu/year/2016/course/TDA452_Functional_Programming/lectures/LooseEnds.html)
 
+Case switches, tex med Maybe types:
+```haskell
+case ... of
+  Nothing -> Nothing
+  Just x -> case ... of
+    Nothing -> Nothing
+    Just y -> ...
+```
+
+let ... in  (Let the right one in håhåhå)
+
+**!!** är index
 
 Kvar att läsa igenom:  
 Week 1 ~~A~~, ~~B~~   
