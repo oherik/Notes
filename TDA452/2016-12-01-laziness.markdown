@@ -25,7 +25,8 @@ Infinite lists are a thing. They are used IRL and can cause GHCi to use 14 GB of
 Newton's square root thingie:
 ```haskell
 
-sqroot x = [a | (a',a) <- zip as (tail as), abs (a'-a) < 1e-10] -- med felmarginal på 1e-10 eller nåt sånt tror jag
+sqroot x = [a | (a',a) <- zip as (tail as), abs (a'-a) < 1e-10] -- med felmarginal på 1e-10 eller nåt sånt tror jag:q
+
   where
     as = iterate next 1
     next a = (a+x/a)/2

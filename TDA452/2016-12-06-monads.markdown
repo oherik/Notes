@@ -1,0 +1,80 @@
+# Parsing
+The runtime system is the only thing that can run the IO monad. Otherwise it just acts like an abstract data type.
+
+<-   är som run?
+
+Kan override default functions, men man behöver inte
+
+## Do-notation
+Är syntactic sugar.   Jahaaaa <- används i resten av do-blocket som en funktion.  
+``` haskell
+do v <- act 1  
+        act 2
+
+är som
+
+act 1 >>= \v -> act2
+```
+
+Så
+
+```haskell
+doTwice i = do
+  a <- i
+  b <- i
+  return (a,b)
+```
+
+Är detsamma som
+
+```haskell
+doTwice i = i >>= (\a ->
+            i >>= (\b ->
+            return (a,b)))
+```
+
+Man använder alltså lambdaexpressions.
+
+## Maybe
+Man kan hoppa i cases av Justs och Nothings, och sen åkalla andra saker. Får man Nothing kanske man vill returnera Nothing, typ.
+
+Each check we need to check things if the lookup fails. Sort of. Yeah.
+
+Redefine the bilingaddress in monadic style
+
+```haskell
+billingAddress' car = do
+  pnr <- lookup car carRegister
+  name <- lookup pnr nameRegister
+  addr <- lookup (name, pnr) addressRegister
+  return (name, addr)
+
+```
+Detta kan ju då skrivas om :D
+```haskell
+
+billingAddress'' car =
+  lookup car carRegister >>= \pnr ->
+ do
+  pnr <- lookup car carRegister
+  name <- lookup pnr nameRegister
+  addr <- lookup (name, pnr) addressRegister
+  return (name, addr)
+```
+
+Men do-grejen är rätt fance att ha här. Döljer plumbing, wiring. Inre saker.
+
+Kallar man inte grejen nåt, typ
+
+```haskell
+  do
+    char ')'
+    return 42
+```
+
+så blir det
+
+```haskell
+  char ')' >>= \_ -> return 42 -- "Yeah whatever, I don't care about the input"
+
+```
